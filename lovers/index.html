@@ -1,0 +1,880 @@
+<!--
+ * @Author: hxr
+ * @Date: 2020-06-11 15:00:44
+ * @LastEditTime: 2020-06-11 16:33:42
+ * @LastEditors: hxr
+ * @Description: 
+--> 
+<!DOCTYPE html>
+<html lang="en">
+    <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+            <base href="https://www.lavendercottage.com.tw/">
+    <meta name="apiurl" content="https://www.lavendercottage.com.tw/zh-tw/api/">
+    <meta name="api-ctrler" content="home">
+    <meta name="api-action" content="index">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1, minimum-scale=1.0, maximum-scale=5.0">
+    <title>薰衣草森林</title>
+    <meta name="keywords" content="薰衣草森林,兩個女生,薰衣草,甜蜜号,旅人的夢中森林">
+    <meta name="description" content="在薰衣草的山谷裡，微風緩緩吹過樹梢，暖和的陽光灑落薰衣草田，喜樂的鳥兒在歌唱!  ">
+    
+    <link href="assets/css/reset.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+    
+    
+    <script async="" src="//www.google-analytics.com/analytics.js"></script><script type="text/javascript" src="assets/js/vendor/jquery/jquery-1.11.1.min.js"></script> 
+    <script type="text/javascript" src="assets/js/vendor/jquery-migrate-1.2.1.js"></script> 
+    <!-- select效果--->
+    <script src="assets/js/vendor/jquery.fs.selecter.js"></script>
+    <link href="assets/css/jquery.fs.selecter.css" rel="stylesheet">
+    <!-- select scroller樣式-->
+    <link href="assets/css/jquery.fs.scroller.css" rel="stylesheet" type="text/css" media="all">
+    <script src="assets/js/vendor/jquery.fs.scroller.js"></script>
+    <!-- input淡出效果 -->
+    <script src="assets/js/vendor/jquery.infieldlabel.min.js" type="text/javascript" charset="utf-8"></script>
+    <link href="assets/css/password_strength.css" rel="stylesheet" type="text/css">
+    <!-- 夢想種子輪播-->
+    <script src="assets/js/vendor/jquery.transit.min.js"></script>
+    <script src="assets/js/vendor/jquery.slide_show_dreams.js" type="text/javascript" charset="utf-8"></script>
+    <!-- fancybox-->
+    <link rel="stylesheet" href="assets/js/vendor/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen">
+    <script type="text/javascript" src="assets/js/vendor/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+    <!-- underscore-->
+    <script type="text/javascript" src="assets/js/vendor/underscore/underscore-min.js"></script>
+    <script type="text/javascript" src="assets/js/vendor/underscore/underscore.string.min.js"></script>
+    <!-- backbone-->
+    <script type="text/javascript" src="assets/js/vendor/backbone/backbone-min.js"></script>
+    <!-- jPages 分頁-->
+    <link href="assets/js/vendor/jPages/jPages.css" rel="stylesheet">
+    <script type="text/javascript" src="assets/js/vendor/jPages/jPages.js"></script>
+    <!-- lazyload 圖片延遲載入-->
+    <script type="text/javascript" src="assets/js/vendor/jquery.lazyload.js"></script>
+    <!-- lazyload 圖片載入-->
+    <script type="text/javascript" src="assets/js/vendor/imagesloaded.pkgd.js"></script>
+    <!-- easing-->
+    <script type="text/javascript" src="assets/js/vendor/jquery.easing.min.js"></script>
+    
+    <!-- easing-->
+    <script type="text/javascript" src="assets/js/vendor/jquery.masonry.js"></script>
+    <!-- 卷軸樣式--->
+    <link rel="stylesheet" href="assets/js/vendor/mCustomScrollbar/jquery.mCustomScrollbar.css" type="text/css" media="screen">
+    <script type="text/javascript" src="assets/js/vendor/mCustomScrollbar/jquery.mCustomScrollbar.js"></script>
+    <!-- jPlayer--->
+    <script type="text/javascript" src="assets/js/vendor/jplayer/jquery.jplayer.min.js"></script>
+    <script type="text/javascript" src="assets/js/vendor/jplayer/jquery.transform2d.js"></script>
+    <script type="text/javascript" src="assets/js/vendor/jplayer/jquery.grab.js"></script>
+    <script type="text/javascript" src="assets/js/vendor/jplayer/mod.csstransforms.min.js"></script>
+    <script type="text/javascript" src="assets/js/vendor/jplayer/circle.player.js"></script>
+    <!-- Gary_jQuery--->
+    <script type="text/javascript" src="assets/js/js.js"></script>
+    <!-- Claire_jQuery--->
+  
+    <style>
+        .show{
+            height: 100%;
+             position: relative;
+            z-index: 2;
+           background: #ee89d6!important;
+        }
+        .top_meun .hide .menu {
+    width: 100%;
+    position: absolute;
+    top: -200px;
+    background: #ee89d6!important;
+    left: 0;
+}
+.foot {
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    background: #ee89d6!important;
+}
+
+::selection {
+    background: #ee89d6!important;
+    color: #fff;
+}
+
+
+    </style>
+    </head>
+       
+    <body class="main_body">
+        <!-- The jPlayer div must not be hidden. Keep it at the root of the body element to avoid any such problems. -->
+        <div id="jquery_jplayer_1" class="cp-jplayer" style="width: 0px; height: 0px;"><img id="jp_poster_0" style="width: 0px; height: 0px; display: none;"><audio id="jp_audio_0" preload="metadata" src="https://www.lavendercottage.com.tw/assets/music/FinalDancingintheforest.m4a"></audio></div>
+
+        <!-- The container for the interface can go where you want to display it. Show and hide it as you need. -->
+
+        <div id="cp_container_1" class="cp-container">
+
+            <ul class="cp-controls">
+                <li><a class="cp-play" tabindex="1" style="display: block;">play</a></li>
+                <li><a class="cp-pause" style="display: none;" tabindex="1">pause</a></li>
+            </ul>
+        </div>
+        <!--<a class="music_ctrl stop"></a>
+<audio id="music" loop="" style="display: none;">
+    <source src="assets/music/FinalDancingintheforest.wav" type="audio/x-wav">
+    <source src="assets/music/FinalDancingintheforest.mp3" type="audio/mp3">
+    <source src="assets/music/FinalDancingintheforest.ogg" type="audio/ogg">
+    <source src="assets/music/FinalDancingintheforest.wma" type="audio/wma">
+    <source src="assets/music/FinalDancingintheforest.aac" type="audio/aac">
+</audio>-->
+<div id="thisIsIndex"></div>
+<div class="box info full" style="height: 309px; width: 1903px;">
+    <div class="show">
+
+        <ul class="left">
+            <li>
+                <a href="https://www.facebook.com/lavender2001" target="_blank" title="Facebook粉絲團">
+                    <img src="assets/img/icon_fb.svg">
+                </a>
+            </li>
+            <!--li>
+                <a href="javascript:void();" target="_blank" title="Twitter粉絲團">
+                    <img src="assets/img/icon_twitter.svg">
+                </a>
+            </li-->
+            <li class="sub">
+                <a class="sharp-link epaper_apply">微信公众号</a>
+            </li>
+            <li class="sub">
+                <a target="_blank" class="">微博</a>
+            </li>
+        </ul>
+
+        <a href="/zh-tw/" title="回首頁去" class="logo">
+            <img src="assets/img/logo.svg">
+        </a>
+
+        <ul class="right">
+            <!--li><a href="javascript:void();">CONTACT</a></li-->
+            <li><a href="#!home/LightBox/contact/1/1" id="contactItem-1" class="sharp-link">留言</a></li>
+                        <li><a href="#zcsc">主厨上菜</a></li>
+            <li><a href="#zx">资讯</a></li>
+            <li><a href="#kb">快报</a></li>
+            <li><a href="#jrwm">加入我们</a></li>
+            
+        </ul>
+
+        <a href="javascript:void(0)" onclick="common.gotoTag('#main_top')" class="scroll_down color_white close_music_first" style="bottom:50px;">
+            <img src="assets/img/scroll_down_fff.svg"><br>
+            <font>遇见你!!</font><br>
+            <span>Scroll Down</span>
+        </a>
+
+    </div>
+</div>
+<div class="mobi_menu_btn">
+    <div class="icon"><hr></div>
+</div>
+<div class="mobi_menu" style="display: none;">
+    <ul class="menu_ul_mobi">
+        <li class="li01">
+            <a href="/zh-tw/dreams">
+                <font>
+                <img src="assets/img/main_icon01.svg"> 
+                </font>
+                <h1>甜蜜号</h1>
+            </a>
+        </li>
+        <li class="li02">
+            <a href="/zh-tw/forest">
+                <font>
+                <img src="assets/img/main_icon02.svg"> 
+                </font>
+                <h1>探索森林</h1>
+            </a>
+        </li>
+        <li class="li03">
+            <a href="/zh-tw/house">
+                <font>
+                <img src="assets/img/main_icon03.svg"> 
+                </font>
+                <h1>香草House</h1>
+            </a>
+        </li>
+        <li class="li04">
+            <a href="/zh-tw/experience">
+                <font>
+                <img src="assets/img/main_icon04.svg"> 
+                </font>
+                <h1>森林體驗</h1>
+            </a>
+        </li>
+        <li class="li05">
+            <a href="#!home/epaper/friend/1" class="sharp-link epaper_friend">
+                <font>
+                <img src="assets/img/main_icon05.svg"> 
+                </font>
+                <h1>森林密友</h1>
+            </a>
+        </li>
+        <li class="li06">
+            <a href="/zh-tw/">
+                <font>
+                <img src="assets/img/logo.svg"> 
+                </font>
+                <h1>回首页</h1>
+            </a>
+        </li>
+    </ul>
+    <ul class="sec_list">
+        <li><a href="#!home/LightBox/contact/1/1" id="contactItem-1" class="sharp-link">留言</a></li>
+                <li><a href="/zh-tw/forest#!forest/menu/2/55">主厨上菜</a></li>
+        <li><a href="/zh-tw/home#!forest/gotoTag/home_traffice/36">资讯</a></li>
+        <li><a href="/zh-tw/experience#!experience/gotoTag/exp_03/3">快报</a></li>
+        <li><a href="/zh-tw/#!home/LightBox/join/1/129">加入我们</a></li>
+    </ul>
+    <ul class="icon">
+        <li>
+            <a href="https://www.facebook.com/lavender2001" target="_blank" title="Facebook粉絲團">
+                <img src="assets/img/icon_fb.svg">
+            </a>
+        </li>
+        <!--li>
+            <a href="javascript:void();" target="_blank" title="Twitter粉絲團">
+                <img src="assets/img/icon_twitter.svg">
+            </a>
+        </li-->
+        <li class="sub">
+            <a href="#!home/epaper/apply/1" class="sharp-link epaper_apply">微信公众号</a>
+        </li>
+        <li class="sub">
+                <a href="https://dreamdancer1109.wixsite.com/english" target="_blank" class="">小程序</a>
+        </li>
+    </ul>
+</div>
+
+
+
+
+
+<div class="top_meun">
+    <div class="show" style="background-color: #db;">
+
+        <ul class="left">
+            <li>
+                <a href="https://www.facebook.com/lavender2001" target="_blank" title="Facebook粉絲團">
+                    <img src="assets/img/icon_fb.svg">
+                </a>
+            </li>
+            <!--li>
+                <a href="javascript:void();" target="_blank" title="Twitter粉絲團">
+                    <img src="assets/img/icon_twitter.svg">
+                </a>
+            </li-->
+            <li class="sub">
+                <a href="#!home/epaper/apply/1" class="sharp-link epaper_apply">微信小程序</a>
+            </li>
+            <li class="sub">
+                <a href="https://dreamdancer1109.wixsite.com/english" target="_blank" class="">English</a>
+        </li>
+        </ul>
+
+        <a href="/zh-tw/" title="回首頁去" class="logo">
+            <img src="assets/img/logo.svg">
+        </a>
+
+        <ul class="right">
+            <li><a href="#!home/LightBox/contact/1/1" id="contactItem-1" class="sharp-link">留言</a></li>
+                        <li><a href="/zh-tw/forest#!forest/menu/2/77">主厨上菜</a></li>
+            <li><a href="/zh-tw/home#!forest/gotoTag/home_traffice/51">资讯</a></li>
+            <li><a href="/zh-tw/experience#!experience/gotoTag/exp_03/43">快报</a></li>
+            <li><a href="/zh-tw/#!home/LightBox/join/1/129">加入我们</a></li>
+        </ul>
+
+        <a href="javascript:void(0)" class="scroll_open color_white" style="bottom:100px;">
+            <img src="assets/img/scroll_down_fff.svg"><br>
+            <font>逛逛香草HOUSE!</font><br>
+            <span>Scroll Down</span>
+        </a>
+
+        <a class="menu_btn_ctrl" href="javascript:void(0)">
+            <div class="icon"><hr></div>
+
+        </a>
+
+    </div>
+    <div class="wave">
+        <img src="./1.png">
+    </div>
+    <div class="hide">
+        <a href="javascript:void(0);" class="menu_btn">
+            <font class="t01">M</font>
+            <font class="t02">E</font>
+            <font class="t03">N</font>
+            <font class="t04">U</font>
+        </a>
+
+        <div class="menu" style="top: -257px;">
+            <ul class="menu_ul">
+                <li class="li01" style="top: -50px;">
+                    <a href="/zh-tw/dreams">
+                        <font>
+                        <img src="assets/img/main_icon01.svg"> 
+                        </font>
+                        <h1>粉色梦想</h1>
+                    </a>
+                </li>
+                <li class="li02" style="top: -50px;">
+                    <a href="/zh-tw/forest">
+                        <font>
+                        <img src="assets/img/main_icon02.svg"> 
+                        </font>
+                        <h1>探索花园</h1>
+                    </a>
+                </li>
+                <li class="li03" style="top: -50px;">
+                    <a target="_blank" href="http://www.theadagio.com.tw/adagioreindeer/index.php ">
+                        <font>
+                        <img src="assets/img/main_icon03.svg"> 
+                        </font>
+                        <h1>香草House<span class="Mhouse-span"></span></h1>
+                    </a>
+                </li>
+                <li class="li04" style="top: -50px;">
+                    <a href="/zh-tw/experience">
+                        <font>
+                        <img src="assets/img/main_icon04.svg"> 
+                        </font>
+                        <h1>花园体验</h1>
+                    </a>
+                </li>
+                <li class="li05" style="top: -50px;">
+                    <a href="#!home/epaper/friend/1" class="sharp-link epaper_friend">
+                        <font>
+                        <img src="assets/img/main_icon05.svg"> 
+                        </font>
+                        <h1>森林密友</h1>
+                    </a>
+                </li>
+            </ul>
+            <ul class="hide_list">
+                <li><a href="#!home/LightBox/contact/1/1" id="contactItem-1" class="sharp-link">留言</a></li>
+                                <li><a href="/zh-tw/forest#!forest/menu/2/75">主厨上菜</a></li>
+                <li><a href="/zh-tw/home#!forest/gotoTag/home_traffice/86">资讯</a></li>
+                <li><a href="/zh-tw/experience#!experience/gotoTag/exp_03/32">快报</a></li>
+                <li><a href="/zh-tw/#!home/LightBox/join/1/194">加入我们</a></li>
+            </ul>
+            <div class="wave">
+                <img src="./1.png" >
+            </div>
+
+        </div>
+
+    </div>
+
+</div><!-- top_menu end -->
+
+<div class="main" id="main_top">
+
+    <div class="box full middle" style="height: 309px; width: 1903px;">
+
+        <ul class="index_ad" id="banner_pages">
+                            <li style="display: block; opacity: 1;">
+                    <a href="https://is.gd/qRmJUr" target="_blank">
+                        <div class="txt">
+                            <h1 class="color_sys"></h1>
+                            <p class="color_sys">
+                                                            </p>
+                        </div>
+                        <img src="imagefly/w1400-h802-c/uploads/index/20200427_index_ad-01.jpg" class="adimg">
+                    </a>
+                </li>
+                    </ul>
+        <div class="index_ad_ctrl">
+            <div class="holder_banner" style="width:20px"><a class="jp-current"></a><span class="jp-hidden">...</span></div>
+            <div class="holder_more"><a href="/zh-tw/experience#!experience/gotoTag/exp_03/51">更多活動</a></div>
+        </div>
+
+        <a href="#!forest/gotoTag/home_takeoff/1" class="scroll_down color_sys sharp-link goto_home_takeoff">
+            <img src="assets/img/scroll_down.svg"><br>
+            <font>甜蜜号起航!!</font><br>
+            <span>Scroll Down</span>
+        </a>
+        <!--<img src="assets/img/wave_masks.svg">-->
+    </div>
+
+    <div class="cover"></div>
+
+    <div class="box full middle index_about_cover" id="home_takeoff" style="background: url(&quot;assets/img/&quot;) center center / cover no-repeat rgb(210, 196, 224); height: 309px; width: 1903px;">
+
+
+        <div class="wave_up">
+            <img src="" class="w_wave">
+            <img src="assets/img/wave_line_dark.svg" class="w_line">
+        </div>
+
+        <img src="assets/img/index_about_top.svg" class="top">
+        <img src="assets/img/index_about_right.svg" class="right">
+        <img src="assets/img/index_about_left.svg" class="left">
+
+        <div class="mid">
+            <h1>恋爱的<font class="color_sys">粉色梦想</font></h1>
+            <h3 class="color_sys">
+                情感 爱恋 希望能给广大双人狗们 一个充满浪漫与秘密的空间
+            </h3>
+            <br>
+            <p class="color_sys">
+                你是我自罚三杯都不肯开口的秘密<br>
+                世上之事，皆难如意，世间之人，都不如你，<br>
+                我对于你，如鲸向海，似鸟投林，不可避免，退无可退，<br>
+                从前的日色变得慢，车、马、邮件都慢，一生只够爱一个人
+            </p>
+            <a href="/zh-tw/dreams" class="more index_about">
+                <img src="assets/img/index_about_icon.svg" width="25"><font>甜蜜起航 !!</font><span>Discover Now</span>
+            </a>
+            <img src="assets/img/index_about_down.svg" class="down">
+        </div>
+        <a href="#!forest/gotoTag/home_explore/1" class="scroll_down color_sys sharp-link goto_home_explore">
+            <img src="assets/img/scroll_down.svg"><br>
+            <font>探索薰衣草森林!!</font><br>
+            <span>Scroll Down</span>
+        </a>
+    </div>
+
+    <div class="cover"></div>
+
+    <div class="box full dark_bg" id="home_explore" style="background: url(&quot;assets/img/index_forest_bg.png&quot;) 50% 100% / cover no-repeat; height: 309px; width: 1903px;">
+
+        <div class="wave_up">
+            <img src="assets/img/wave_up_01.svg" class="w_wave">
+            <img src="assets/img/wave_line.svg" class="w_line">
+        </div>
+
+        <div class="mid">
+            <h1 class="color_white">森林漫遊</h1>
+            <p class="color_white">
+                在薰衣草的山谷裡，沒有都市的喧囂，只有微風緩緩吹過肖木楠樹，<br>
+                暖和的陽光灑落薰衣草田，喜樂的鳥兒在歌唱，<br>
+                花朵在四季中輪流綻放...
+            </p>
+            <a href="/zh-tw/forest" class="more index_forest">
+                <font class="pahigh">探索森林 !!</font>
+                <span>Discover Now</span>
+            </a>
+        </div>
+
+
+        <div class="wave_down">
+            <img src="assets/img/wave_down_02.svg" class="w_wave">
+            <img src="assets/img/wave_line.svg" class="w_line">
+        </div>
+
+        <a href="#!forest/gotoTag/home_house/1" class="scroll_down color_white sharp-link goto_home_house" style="bottom:100px;">
+            <img src="assets/img/scroll_down_fff.svg"><br>
+            <font>逛逛香草HOUSE!</font><br>
+            <span>Scroll Down</span>
+        </a>
+    </div>
+
+    <div class="cover"></div>
+
+    <div class="box full dark_bg" id="home_house" style="background: url(&quot;assets/img/index_house.svg&quot;) 50% 110% / cover no-repeat rgb(238, 137, 214); height: 309px; width: 1903px;">
+
+        <div class="mid">
+            <h1 class="color_white">坐下聊<span class="color_sys"> House</span></h1>
+            <h3 class="color_white">這是一個談夢想、談生活的開始!</h3>
+            <p class="color_white">
+                起初在新社店小小香草田中種下的第一株薰衣草，<br>
+                如今，已是遍野的紫丘，小小的夢想，彷彿隨著薰衣草花開的步伐，<br>
+                一點一點的發芽茁壯...
+            </p>
+            <a href="http://www.theadagio.com.tw/adagioreindeer/index.php" class="more index_house">
+                <img src="assets/img/index_house_icon.svg" width="50">
+                <font>進來坐坐 !!</font>
+                <span>Discover Now</span>
+            </a>
+        </div>
+
+        <a href="#!forest/gotoTag/home_news/1" class="scroll_down color_white sharp-link goto_home_news">
+            <img src="assets/img/scroll_down_fff.svg"><br>
+            <font>厚康A森林快報!</font><br>
+            <span>Scroll Down</span>
+        </a>
+
+    </div>
+
+    <div class="cover"></div>
+
+    <div class="box dark_bg" id="home_news" style="background: url(&quot;assets/img/index_news_bg.svg&quot;) 55% 10% no-repeat rgb(238, 137, 214); width: 1903px;">
+
+        <div class="wave_up">
+            <img src="assets/img/wave_up_03.svg" class="w_wave">
+            <img src="assets/img/wave_line.svg" class="w_line">
+        </div>
+
+        <div class="mid">
+            <h1 class="color_white"><span class="color_green">森林</span>快報</h1>
+            <h3 class="color_white">厚康A代誌大聲報，讓大家都知道！</h3>
+            <p class="color_white p60">
+                薰衣草森林一年四季不斷編織夢想，為的只是讓每個追夢的人們能來此體驗更多不同的感受，
+                想前往薰衣草森林的追夢人千萬別忘了看一下森林快報喔...
+            </p>
+            <!--a href="/zh-tw/experience#!experience/gotoTag/exp_03/1" class="more index_news">
+                <font>更多活動 !!</font>
+                <span>MORE >></span>
+            </a-->
+            <div class="holder_post"><a class="jp-current"></a><span class="jp-hidden">...</span><a></a></div>
+        </div>
+        <ul class="news_list" id="post_pages">
+                            <li style="display: block; opacity: 1;">
+                    <!-- 新消息的<a>會有new的class-->
+                    <a class="sharp-link " id="postItem-87" href="#!home/LightBox/homePost/87/1">
+                        <div class="img_box">
+                            <font>Learn More</font>
+                                                            <img src="imagefly/w263-h263-c/uploads/news/2020繡球花節_幸福花路-02.png" 　class="lazy" data-original="imagefly/w263-h263-c/uploads/news/2020繡球花節_幸福花路-02.png" width="263" heigh="263" style="display: inline;">
+                                                    </div>
+                        <img src="assets/img/news_bg.svg" class="cover">
+                        <img src="assets/img/news_new.svg" class="new">
+                        <div class="txt">
+                            <h1>繡球花節｜幸福花路<br>   &lt;尖石店&gt;</h1>
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                            <li style="display: block; opacity: 1;">
+                    <!-- 新消息的<a>會有new的class-->
+                    <a class="sharp-link " id="postItem-79" href="#!home/LightBox/homePost/79/1">
+                        <div class="img_box">
+                            <font>Learn More</font>
+                                                            <img src="imagefly/w263-h263-c/uploads/news/村光學旅課程.png" 　class="lazy" data-original="imagefly/w263-h263-c/uploads/news/村光學旅課程.png" width="263" heigh="263">
+                                                    </div>
+                        <img src="assets/img/news_bg.svg" class="cover">
+                        <img src="assets/img/news_new.svg" class="new">
+                        <div class="txt">
+                            <h1>村光學旅</h1>
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                            <li style="display: block; opacity: 1;">
+                    <!-- 新消息的<a>會有new的class-->
+                    <a class="sharp-link " id="postItem-43" href="#!home/LightBox/homePost/43/1">
+                        <div class="img_box">
+                            <font>Learn More</font>
+                                                            <img src="imagefly/w263-h263-c/uploads/exp/project/201709_01_s.png" 　class="lazy" data-original="imagefly/w263-h263-c/uploads/exp/project/201709_01_s.png" width="263" heigh="263">
+                                                    </div>
+                        <img src="assets/img/news_bg.svg" class="cover">
+                        <img src="assets/img/news_new.svg" class="new">
+                        <div class="txt">
+                            <h1>森林漫步體驗<br>薰衣草森林新社店</h1>
+                            <p>
+                                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                            <li style="display: none; opacity: 1;">
+                    <!-- 新消息的<a>會有new的class-->
+                    <a class="sharp-link " id="postItem-44" href="#!home/LightBox/homePost/44/1">
+                        <div class="img_box">
+                            <font>Learn More</font>
+                                                            <img src="imagefly/w263-h263-c/uploads/news/漂鳥LOGO-01.png" 　class="lazy" data-original="imagefly/w263-h263-c/uploads/news/漂鳥LOGO-01.png" width="263" heigh="263">
+                                                    </div>
+                        <img src="assets/img/news_bg.svg" class="cover">
+                        <img src="assets/img/news_new.svg" class="new">
+                        <div class="txt">
+                            <h1>漂鳥Stray Bird：找到生命的座標，驕傲的飛翔</h1>
+                            <p>
+                                
+
+因為勇氣，讓一切都將可能&nbsp;!
+勇敢的旅行…                            </p>
+                        </div>
+                    </a>
+                </li>
+                            <li style="display: none; opacity: 1;">
+                    <!-- 新消息的<a>會有new的class-->
+                    <a class="sharp-link " id="postItem-22" href="#!home/LightBox/homePost/22/1">
+                        <div class="img_box">
+                            <font>Learn More</font>
+                                                            <img src="imagefly/w263-h263-c/uploads/exp/project/201509_03_s.png" 　class="lazy" data-original="imagefly/w263-h263-c/uploads/exp/project/201509_03_s.png" width="263" heigh="263">
+                                                    </div>
+                        <img src="assets/img/news_bg.svg" class="cover">
+                        <img src="assets/img/news_new.svg" class="new">
+                        <div class="txt">
+                            <h1>郵遞分享旅行美好<br>新社年輪郵局</h1>
+                            <p>
+                                
+
+
+
+
+
+
+
+
+
+
+
+
+森林…                            </p>
+                        </div>
+                    </a>
+                </li>
+                    </ul>
+
+        <a href="#!forest/gotoTag/home_traffice/1" class="scroll_down color_white sharp-link goto_home_traffice">
+            <img src="assets/img/scroll_down_fff.svg"><br>
+            <font>我要司機秘笈!</font><br>
+            <span>Scroll Down</span>
+        </a>
+
+    </div>
+
+
+    <div class="cover"></div>
+
+    <div class="box last02" id="home_traffice" style="background: url(&quot;assets/img/index_loca_top.svg&quot;) 50% 150px no-repeat rgb(239, 239, 239); width: 1903px;">
+
+
+        <div class="wave_up">
+            <img src="assets/img/wave.svg" class="w_wave">
+            <img src="assets/img/wave_line.svg" class="w_line">
+        </div>
+        <div class="mid loca">
+            <h1><span class="color_sys">園區</span>資訊</h1>
+            <h3>對於交通若有不清楚的地方，歡迎您來電洽詢！</h3>
+            <p class="p60">
+                我們提供各分店交通資訊，如自行開車、搭乘高鐵、台鐵等，歡迎您點選查看，若有不清楚的地方，還請您來電與我們連繫，謝謝。
+            </p>
+        </div>
+        <div class="loca_bg">
+            <img src="assets/img/index_loca.svg" class="index_loca_img">
+            <ul class="loca_ul">
+                                    <li><a href="#!forest/traffice/1/1" class="sharp-link" id="trafficeItem-1">台中新社店</a></li>
+                                    <li><a href="#!forest/traffice/2/1" class="sharp-link" id="trafficeItem-2">新竹尖石店</a></li>
+                            </ul>
+
+            <h6 class="more loca">
+                <font>往這兒走!!</font>
+                <span>FOLLOW ME</span>
+            </h6>
+        </div>
+
+        <a href="javascript:void(0)" class="scroll_down top color_sys">
+            <img src="assets/img/scroll_down.svg"><br>
+            <span>Back to Top</span>
+        </a>
+        <div id="checkIndex"></div>
+    </div>
+</div>
+<!--main end-->
+<div class="foot">
+
+    <div class="wave_up">
+        <img src="" class="w_wave">
+        <img src="assets/img/wave_line.svg" class="w_line">
+    </div>
+
+    <ul class="main_m">
+        <li><a href="/zh-tw/dreams">甜蜜号</a></li>
+        <li><a href="/zh-tw/forest">探索森林</a></li>
+        <li><a target="_blank" href="http://www.theadagio.com.tw/adagioreindeer/index.php ">香草House</a></li>
+        <li><a href="#">森林體驗</a></li>
+        <li><a href="#" class="sharp-link epaper_friend">森林密友</a></li>
+    </ul>
+
+
+    <ul class="main_s">
+        <li><a href="#" target="_blank">森林家族品牌</a></li>
+        <!--<li><a href="#!home/LightBox/join/1/1" id="joinItem-1"  class="sharp-link">加入織夢團隊</a></li>-->
+        <li><a href="#" id="sitemapItem-1" class="sharp-link">網站地圖</a></li>
+        <li><a href="#" id="policyItem-1" class="sharp-link">隐私及政策</a></li>
+    </ul>
+
+    <ul class="main_d">
+                    <li>
+                        地区  
+                 <br>江苏南京<br>
+                  by  <span>原来如此</span>
+                           </li>
+                    <li>
+                微信号<br>
+                HUISHAOo
+                          </li>
+            </ul>
+    <font>
+    网站参考于  <a href="http://www.wddgroup.com/" target="_blank">Designed By <span>WDD</span></a>
+    </font>
+</div>
+<script>
+
+    (function($) {
+
+      
+
+
+        //圖片延遲載入效果
+        $("img").lazyload({effect: "fadeIn"});
+            //廣告分頁
+            $("div.holder_banner").jPages({
+                containerID: "banner_pages",
+                pause: 4000,
+                first: false,
+                previous: false,
+                next: false,
+                last: false,
+                perPage: 1,
+                links: "blank"
+            });
+
+            //森林快報分頁
+
+
+            var win_w = $(window).width();
+            var perPage_nb_for
+            if (win_w > 750) {
+                perPage_nb_for = 3
+            } else if (win_w > 533 && win_w <= 750) {
+                perPage_nb_for = 2
+            } else if (win_w <= 533) {//css -> 768
+                perPage_nb_for = 1
+            }
+
+            $("div.holder_post").jPages({
+                containerID: "post_pages",
+                first: false,
+                previous: false,
+                next: false,
+                last: false,
+                perPage: perPage_nb_for,
+                links: "blank"
+            });
+
+
+            $(window).on('resize', function() {
+
+                var win_w = $(window).width();
+                var perPage_nb_for
+                if (win_w > 750) {
+                    perPage_nb_for = 3
+                } else if (win_w > 533 && win_w <= 750) {
+                    perPage_nb_for = 2
+                } else if (win_w <= 533) {//css -> 768
+                    perPage_nb_for = 1
+                }
+
+                $("div.holder_post").jPages("destroy").jPages({
+                    containerID: "post_pages",
+                    first: false,
+                    previous: false,
+                    next: false,
+                    last: false,
+                    perPage: perPage_nb_for,
+                    links: "blank"
+                });
+
+            });
+
+                //音樂控制開始
+
+                var myCirclePlayer = new CirclePlayer("#jquery_jplayer_1",
+                        {
+                            m4a: "assets/music/FinalDancingintheforest.m4a",
+                            oga: "assets/music/FinalDancingintheforest.ogg"
+                        }, {
+                    cssSelectorAncestor: "#cp_container_1",
+                    swfPath: "assets/js/vendor/jplayer/jplayer",
+                    wmode: "window",
+                    keyEnabled: true,
+                    canplay: function() {
+                        $("#jquery_jplayer_1").jPlayer("play");
+
+                    }
+                });
+                //音樂控制結束
+    })(jQuery);
+
+
+
+</script>
+
+
+        <a class="full_lightbox" href="javascript:void(0)" data-fancybox-type="iframe"></a>
+
+        <script type="text/javascript" src="assets/js/lavender.js"></script>
+        <script>
+            $(document).ready(function() {
+                var click = document.ontouchstart === undefined ? 'click' : 'touchstart';
+                var kickoff = function() {
+                    $("#jquery_jplayer_1").jPlayer("play");
+                    document.documentElement.removeEventListener(click, kickoff, true);
+                };
+                document.documentElement.addEventListener(click, kickoff, true);
+
+
+                if ($('#thisIsIndex').length < 1) {
+                    $('#cp_container_1').addClass('fixed_style');
+                }
+                $(window).scroll(function() {
+
+                    var win_h = $(window).height();
+
+                    if ($('#thisIsIndex').length > 0) {
+                        if ($(document).scrollTop() >= win_h) {
+                            $('#cp_container_1').addClass('fixed_style');
+                        } else {
+                            $('#cp_container_1').removeClass('fixed_style');
+                        }
+                    }
+                });
+                //lightbox
+                $(".full_lightbox").fancybox({
+                    "padding": 0,
+                    "margin": [0, 0, 0, 0],
+                    "width": '100%',
+                    "height": '100%',
+                    "transitionIn": 'none',
+                    "closeBtn": false,
+                    "helpers": {
+                        "overlay": {
+                            "locked": false
+                        }
+                    },
+                    beforeShow: function() {
+                        $("body").css({"overflow": "hidden"});
+                    },
+                    afterClose: function() {
+                        $("body").css({"overflow": ""});
+                    }
+                });
+
+
+                Lavender.init();
+
+
+            });
+        </script>
+
+
+    
+
+</body>
+</html>
